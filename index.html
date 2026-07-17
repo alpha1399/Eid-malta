@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Independent Identity Portal project." />
+  <title>Identity Portal</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="brand">
+      <span class="brand-mark">IP</span>
+      <span>Identity Portal</span>
+    </div>
+    <span class="independent-label">Independent project</span>
+  </header>
+
+  <main>
+    <section id="accountPage" class="page active">
+      <div class="welcome">
+        <h1>Identity Portal</h1>
+        <p>Create your account, then use the sign-in form to access your profile.</p>
+      </div>
+
+      <div class="account-layout">
+        <section class="panel create-panel">
+          <div class="panel-heading">
+            <span class="step-icon">＋</span>
+            <div>
+              <h2>Create Account</h2>
+              <p>Enter your details below. They will be saved on this device.</p>
+            </div>
+          </div>
+
+          <form id="createForm">
+            <div class="form-grid">
+              <div class="form-field">
+                <label for="firstName">First name</label>
+                <input id="firstName" type="text" required />
+              </div>
+
+              <div class="form-field">
+                <label for="surname">Surname</label>
+                <input id="surname" type="text" required />
+              </div>
+
+              <div class="form-field">
+                <label for="referenceNumber">Reference number</label>
+                <input id="referenceNumber" type="text" required />
+              </div>
+
+              <div class="form-field">
+                <label for="dateOfBirth">Date of birth</label>
+                <input id="dateOfBirth" type="date" required />
+              </div>
+
+              <div class="form-field">
+                <label for="email">Email</label>
+                <input id="email" type="email" required />
+              </div>
+
+              <div class="form-field">
+                <label for="phone">Mobile number</label>
+                <input id="phone" type="tel" required />
+              </div>
+
+              <div class="form-field full">
+                <label for="address">Address</label>
+                <textarea id="address" rows="3" required></textarea>
+              </div>
+
+              <div class="form-field">
+                <label for="username">Username</label>
+                <input id="username" type="text" required />
+              </div>
+
+              <div class="form-field">
+                <label for="newPassword">Password</label>
+                <input id="newPassword" type="password" required />
+              </div>
+
+              <div class="form-field full">
+                <label for="confirmPassword">Confirm password</label>
+                <input id="confirmPassword" type="password" required />
+              </div>
+            </div>
+
+            <button class="primary-btn" type="submit">Create Account</button>
+            <p id="createMessage" class="message" aria-live="polite"></p>
+          </form>
+        </section>
+
+        <section class="panel sign-panel">
+          <div class="panel-heading">
+            <span class="step-icon">→</span>
+            <div>
+              <h2>Sign In to Account</h2>
+              <p>Use the username and password you created.</p>
+            </div>
+          </div>
+
+          <form id="signInForm">
+            <div class="form-field">
+              <label for="loginUsername">Username</label>
+              <input id="loginUsername" type="text" required />
+            </div>
+
+            <div class="form-field">
+              <label for="loginPassword">Password</label>
+              <input id="loginPassword" type="password" required />
+            </div>
+
+            <button class="primary-btn" type="submit">Sign In</button>
+            <p id="signInMessage" class="message error" aria-live="polite"></p>
+          </form>
+        </section>
+      </div>
+    </section>
+
+    <section id="profilePage" class="page">
+      <div class="profile-topbar">
+        <button id="menuButton" class="menu-button" type="button" aria-label="Open menu">
+          <span></span><span></span><span></span>
+        </button>
+
+        <img id="headerPhoto" class="header-photo" alt="Profile preview" />
+
+        <div class="header-user">
+          <strong id="headerFullName">Your Name</strong>
+          <span id="headerReference">Reference number</span>
+        </div>
+
+        <button id="signOutButton" class="sign-out" type="button">Sign out</button>
+      </div>
+
+      <nav class="profile-tabs">
+        <button class="profile-tab active" type="button" data-tab="info">
+          <span class="tab-symbol">◉</span>
+          <span>MY INFO</span>
+        </button>
+        <button class="profile-tab" type="button" data-tab="privacy">
+          <span class="tab-symbol">▣</span>
+          <span>PRIVACY &amp;<br />SECURITY</span>
+        </button>
+        <button class="profile-tab" type="button" data-tab="help">
+          <span class="tab-symbol">?</span>
+          <span>HELP</span>
+        </button>
+      </nav>
+
+      <section id="infoTab" class="tab-content active">
+        <div class="profile-card">
+          <div class="photo-section">
+            <img id="profilePhoto" class="profile-photo" alt="Uploaded profile photo" />
+            <label class="photo-button" for="photoInput">Change profile photo</label>
+            <input id="photoInput" type="file" accept="image/*" hidden />
+            <p class="photo-help">Choose a JPG, PNG, or other image from your device.</p>
+          </div>
+
+          <div class="information-grid">
+            <article class="info-item">
+              <div class="info-icon">▣</div>
+              <span class="info-label">Full name</span>
+              <strong id="displayName">—</strong>
+            </article>
+
+            <article class="info-item">
+              <div class="info-icon">♙</div>
+              <span class="info-label">Date of birth</span>
+              <strong id="displayBirthDate">—</strong>
+            </article>
+
+            <article class="info-item">
+              <div class="info-icon">#</div>
+              <span class="info-label">Reference number</span>
+              <strong id="displayReference">—</strong>
+            </article>
+
+            <article class="info-item">
+              <div class="info-icon">✉</div>
+              <span class="info-label">Email address</span>
+              <strong id="displayEmail">—</strong>
+            </article>
+
+            <article class="info-item">
+              <div class="info-icon">☎</div>
+              <span class="info-label">Mobile number</span>
+              <strong id="displayPhone">—</strong>
+            </article>
+
+            <article class="info-item full-width">
+              <div class="info-icon">⌖</div>
+              <span class="info-label">Address</span>
+              <strong id="displayAddress">—</strong>
+            </article>
+          </div>
+
+          <div class="profile-actions">
+            <button id="editDetailsButton" class="outline-btn" type="button">Edit details</button>
+          </div>
+
+          <form id="editForm" class="edit-form hidden">
+            <h2>Edit Profile Details</h2>
+            <div class="form-grid">
+              <div class="form-field">
+                <label for="editFirstName">First name</label>
+                <input id="editFirstName" type="text" required />
+              </div>
+              <div class="form-field">
+                <label for="editSurname">Surname</label>
+                <input id="editSurname" type="text" required />
+              </div>
+              <div class="form-field">
+                <label for="editReference">Reference number</label>
+                <input id="editReference" type="text" required />
+              </div>
+              <div class="form-field">
+                <label for="editBirthDate">Date of birth</label>
+                <input id="editBirthDate" type="date" required />
+              </div>
+              <div class="form-field">
+                <label for="editEmail">Email</label>
+                <input id="editEmail" type="email" required />
+              </div>
+              <div class="form-field">
+                <label for="editPhone">Mobile number</label>
+                <input id="editPhone" type="tel" required />
+              </div>
+              <div class="form-field full">
+                <label for="editAddress">Address</label>
+                <textarea id="editAddress" rows="3" required></textarea>
+              </div>
+            </div>
+            <button class="primary-btn" type="submit">Save Changes</button>
+          </form>
+        </div>
+
+        <section class="report-section">
+          <h2>Report an error</h2>
+          <p>If any information is incorrect, use the edit button above to update it.</p>
+          <a class="primary-btn message-link" href="mailto:contact@example.com">Send us a message</a>
+        </section>
+      </section>
+
+      <section id="privacyTab" class="tab-content">
+        <div class="simple-panel">
+          <h2>Privacy &amp; Security</h2>
+          <p>Your account information is saved only inside this browser. This project is not connected to an external identity service.</p>
+        </div>
+      </section>
+
+      <section id="helpTab" class="tab-content">
+        <div class="simple-panel">
+          <h2>Help</h2>
+          <p>Create an account on the first page, sign in, and use “Change profile photo” to select your own picture.</p>
+        </div>
+      </section>
+    </section>
+  </main>
+
+  <footer>
+    Independent Identity Portal project — not connected to a government service.
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
