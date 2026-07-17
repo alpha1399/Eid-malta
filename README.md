@@ -9,10 +9,6 @@ An independent GitHub Pages project with:
 - Editable personal details
 - Browser-only storage using localStorage
 
-## Important
-
-This project is not connected to a government service. Avoid entering real sensitive data.
-
 ## Update your GitHub website
 
 1. Open your GitHub repository.
